@@ -1,0 +1,24 @@
+'''I can atleast leave this here, i'm not too sure what else to put given the info'''
+
+class Animal():
+    def __init__(self, name, species, age, health):
+        self.name = name
+        self.species = species
+        self.age = age
+        self.health = health
+
+class Adoption(Animal):
+    '''The adoption class'''
+    def __init__(self, animal, status = 'Adoptable'):
+        super().__init__(animal.name, animal.species, animal.age, animal.health)
+        self.status = status
+    
+    def updateStatus(self, input):
+        self.status = input
+
+    def getStatus(self):
+        return {self.name : self.status}
+    
+    @classmethod
+    def getAllStatus(cls):
+        '''Possible function for obtaining every animal status'''
